@@ -1,5 +1,5 @@
 ---
--- @module mqtt_library
+-- @module paho.mqtt
 -- ~~~~~~~~~~~~~~~~
 -- Version: 0.3 2014-10-06
 -- -------------------------------------------------------------------------- --
@@ -83,22 +83,22 @@ end
 local MQTT = {}
 
 ---
--- @field [parent = #mqtt_library] utility#utility Utility
+-- @field [parent = #paho.mqtt] mqtt.utility#utility Utility
 --
 MQTT.Utility = require "paho.utility"
 
 ---
--- @field [parent = #mqtt_library] #number VERSION
+-- @field [parent = #paho.mqtt] #number VERSION
 --
 MQTT.VERSION = 0x03
 
 ---
--- @field [parent = #mqtt_library] #boolean ERROR_TERMINATE
+-- @field [parent = #paho.mqtt] #boolean ERROR_TERMINATE
 --
 MQTT.ERROR_TERMINATE = false      -- Message handler errors terminate process ?
 
 ---
--- @field [parent = #mqtt_library] #string DEFAULT_BROKER_HOSTNAME
+-- @field [parent = #paho.mqtt] #string DEFAULT_BROKER_HOSTNAME
 --
 MQTT.DEFAULT_BROKER_HOSTNAME = "m2m.eclipse.org"
 
@@ -107,7 +107,7 @@ MQTT.DEFAULT_BROKER_HOSTNAME = "m2m.eclipse.org"
 -- @type client
 
 ---
--- @field [parent = #mqtt_library] #client client
+-- @field [parent = #paho.mqtt] #client client
 --
 MQTT.client = {}
 MQTT.client.__index = MQTT.client
@@ -130,7 +130,7 @@ MQTT.client.MAX_PAYLOAD_LENGTH = 268435455 -- bytes
 -- MQTT 3.1 Specification: Section 2.1: Fixed header, Message type
 
 ---
--- @field [parent = #mqtt_library] message
+-- @field [parent = #paho.mqtt] message
 --
 MQTT.message = {}
 MQTT.message.TYPE_RESERVED    = 0x00
